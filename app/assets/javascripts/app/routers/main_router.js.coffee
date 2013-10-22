@@ -3,5 +3,8 @@ class App.Routers.MainRouter extends Backbone.Router
   routes: 
     "" : "index"
 
+  initialize: ->
+    @header = new App.Views.HeaderView()
+
   index: ->
-    console.log "Hi from main router"
+    $('#header').html(@header.render().el)
